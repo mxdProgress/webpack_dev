@@ -1,8 +1,9 @@
 const path = require('path')
 const webpack = require('webpack') //启动热更新得第二步
-    //这个插件有两个作用
-    //1.自动在内存中根据制定页面生成一个内存页面
-    //2.自动把打包好得bundle.js追加到生成的页面中去
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+//这个插件有两个作用
+//1.自动在内存中根据制定页面生成一个内存页面
+//2.自动把打包好得bundle.js追加到生成的页面中去
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 
@@ -28,7 +29,8 @@ module.exports = {
             // },
             hash: true
         }),
-        new webpack.HotModuleReplacementPlugin() //new 一个热更新得模块对象 这是启动热更新的第三部
+        new webpack.HotModuleReplacementPlugin(), //new 一个热更新得模块对象 这是启动热更新的第三部
+        new VueLoaderPlugin()
     ],
     module: { //这个节点，用用配置所用模块加载器
         rules: [{ //匹配规则 安装style-loader css-loader

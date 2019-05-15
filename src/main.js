@@ -8,14 +8,14 @@ class Person {
 }
 console.log(Person.info);
 
-import Vue from "vue"
-import login from "./components/login"
+// import Vue from ""
+import login from "./components/login.vue"
 
 
-var Vm = new Vue({
-    el: '#app',
-    data: {
-        message: 'Hello Vue!'
-    },
-    render: c => c(login)
-})
+// var Vm = new Vue({
+//     el: '#app',
+//     data: {
+//         message: 'Hello Vue!'
+//     },
+//     render: c => c(login)
+// })
